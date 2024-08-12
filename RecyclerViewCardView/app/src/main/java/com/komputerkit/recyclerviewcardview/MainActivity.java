@@ -1,6 +1,7 @@
 package com.komputerkit.recyclerviewcardview;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void isiData(){
         siswaList = new ArrayList<Siswa>();
-        siswaList.add(new Siswa("Dino", "Malang"));
-        siswaList.add(new Siswa("Dino", "Malang"));
-        siswaList.add(new Siswa("Dino", "Malang"));
-        siswaList.add(new Siswa("Dino", "Malang"));
-        siswaList.add(new Siswa("Dino", "Malang"));
-        siswaList.add(new Siswa("Dino", "Malang"));
+        siswaList.add(new Siswa("Jaka", "Bogor"));
+        siswaList.add(new Siswa("Dani", "Blitar"));
+        siswaList.add(new Siswa("Dana", "Malang"));
+        siswaList.add(new Siswa("Dino", "Bandung"));
+        siswaList.add(new Siswa("Danu", "Surabaya"));
+        siswaList.add(new Siswa("Rio", "Banjarmasin"));
         siswaList.add(new Siswa("Dino", "Malang"));
         siswaList.add(new Siswa("Dino", "Malang"));
         siswaList.add(new Siswa("Dino", "Malang"));
@@ -52,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new SiswaAdapter(this,siswaList);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void btnTambah(View view) {
+        siswaList.add(new Siswa("Rio", "Banjarmasin"));
+        adapter.notifyDataSetChanged();
     }
 }

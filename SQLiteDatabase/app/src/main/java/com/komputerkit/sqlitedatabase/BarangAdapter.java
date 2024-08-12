@@ -44,15 +44,12 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
 
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        switch (menuItem.getItemId()){
-                            case R.id.ganti:
-                                ((MainActivity)context).selectUpdate(barangList.get(i).getIdbarang());
-                            break;
-
-                            case R.id.hapus:
-                                ((MainActivity)context).deleteData(barangList.get(i).getIdbarang());
-                            break;
+                    public boolean onMenuItemClick(MenuItem item) {
+                        int id = item.getItemId();
+                        if (id == R.id.ganti){
+                            ((MainActivity)context).selectUpdate(barangList.get(i).getIdbarang());
+                        }else if(id == R.id.hapus){
+                            ((MainActivity)context).deleteData(barangList.get(i).getIdbarang());
                         }
 
                         return false;
