@@ -1,6 +1,7 @@
 package com.komputerkit.intentactiivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Pembelian extends AppCompatActivity {
 
+    TextView tvBeli;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +22,15 @@ public class Pembelian extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        load();
+        data();
+    }
+    public void load(){
+        tvBeli = findViewById(R.id.tvBeli);
+    }
+
+    public void data(){
+        String ambil = getIntent().getStringExtra("ISI");
+        tvBeli.setText(ambil);
     }
 }

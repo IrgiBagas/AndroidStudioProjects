@@ -36,4 +36,18 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("ISI", barang);
         startActivity(intent);
     }
+
+    public void btnJual(View view) {
+        String barang = etBarang.getText().toString();
+        Intent intent = new Intent(this, Pembelian.class);
+        intent.putExtra("ISI", barang);
+        startActivity(intent);
+    }
+
+    public void btnBeli(View view) {
+        String barang = etBarang.getText().toString();
+        Intent intent = new Intent(this, Penjualan.class);
+        intent.putExtra("ISI", barang);
+        startActivity(intent);
+    }
 }
